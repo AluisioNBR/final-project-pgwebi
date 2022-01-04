@@ -13,17 +13,47 @@
         <script src="../script.js" defer></script>
     </head>
     <body>
-        <div id="float-menu">
+        <main>
+            <h2 title="Contato">Contato</h2>
+
+            <div id="contact">
+                <h3 title="Email">
+                    <a href="mailto:lulu70638@gmail.com">
+                        <span>Email</span>
+                        <img src="../img/gmail.png">
+                    </a>
+                </h3>
+
+                <h3 title="LinkedIn">
+                    <a href="https://www.linkedin.com/in/aluisio-netto-1721b4225/">
+                        <span>LinkedIn</span>
+                        <img src="../img/linkedin.png">
+                    </a> 
+                </h3>
+                
+                <h3 title="Instagram">
+                    <a href="https://www.instagram.com/aluisio_netto33/">
+                        <span>Instagram</span>
+                        <img src="../img/instagram.png">
+                    </a> 
+                </h3>
+            </div>
+        </main>
+        
+        <button id="float-button" class="not-active" title="Menu">
+            Menu
+        </button>
+        <div id="float-menu" class="active">
             <nav>
-                <a href="../index.html">
+                <a title="Perfil" href="../index.html">
                     Perfil
                 </a>
 
-                <a href="./projects.html">
+                <a title="Projetos" href="./projects.html">
                     Projetos
                 </a>
                 
-                <a href="#">
+                <a title="Contato" href="#">
                     Contato
                 </a>
             </nav>
