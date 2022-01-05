@@ -45,6 +45,14 @@ h2{
     cursor: default;
 }
 
+hr{
+    width: 40%;
+
+    @media(max-width: 720px){
+        width: 80%;
+    }
+}
+
 .blue-conteiner(){
     padding: 2rem;
     border: 2px solid #colors[@grayBorder];
@@ -102,6 +110,43 @@ h2{
     }
 }
 
+#formations{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 40%;
+    
+    @media(max-width: 720px){
+        width: 80%;
+    }
+
+    #formations__conteiner{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+.formation{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+
+    #formation__description{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 60%;
+
+        @media(max-width: 720px){
+            width: 80%;
+        }
+    }
+}
+
 #habilities{
     display: flex;
     flex-direction: column;
@@ -139,7 +184,8 @@ h2{
         height: 64px;
     }
 
-    figcaption{    
+    figcaption{
+        cursor: default;
         color: #colors[@defaultBlack];
     }
 }
@@ -177,6 +223,34 @@ h2{
         a:hover{
             opacity: #colors[@defaultOpacity];
         }
+    }
+}
+
+#projects-conteiner{
+    .blue-conteiner();
+
+    display: grid;
+
+    width: 50%;
+    overflow-x: auto;
+    
+    @media(max-width: 720px){
+        width: 90%;
+    }
+
+    #project__details{}
+}
+
+.project{
+    width: 256px;
+    height: 128px;
+
+    margin: .5rem;
+    border: 4px solid #colors[@grayBorder];
+
+    img{
+        width: 100%;
+        height: 100%;
     }
 }
 

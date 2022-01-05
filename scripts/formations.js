@@ -1,29 +1,4 @@
 $(document).ready(function () {
-    var Responsive = {
-        resize: function () {
-            if (window.innerWidth <= 720) {
-                Responsive.desactiveMenu();
-                Responsive.activeMenuButton();
-            }
-            else {
-                $('#float-menu').removeClass('not-active');
-                $('#float-menu').addClass('active');
-                Responsive.desactiveMenuButton();
-            }
-        },
-        desactiveMenu: function () {
-            $('#float-menu').removeClass('active');
-            $('#float-menu').addClass('not-active');
-        },
-        activeMenuButton: function () {
-            $('#float-button').removeClass('not-active');
-            $('#float-button').addClass('active');
-        },
-        desactiveMenuButton: function () {
-            $('#float-button').removeClass('active');
-            $('#float-button').addClass('not-active');
-        }
-    };
     var Formations = {
         rocketseat: {
             local: 'Rocketseat',
@@ -38,15 +13,6 @@ $(document).ready(function () {
             description: "Durante meu ensino m\u00E9dio, gra\u00E7as ao IFAL, fui introduzido \u00E0 programa\u00E7\u00E3o, a partir disso comecei minha jornada aprendendo os conceitos iniciais de programa\u00E7\u00E3o, programa\u00E7\u00E3o orientada a objetos, banco de dados e etc."
         }
     };
-    if (screen.width <= 720 || window.innerWidth <= 720) {
-        Responsive.desactiveMenu();
-        Responsive.activeMenuButton();
-    }
-    window.onresize = Responsive.resize;
-    $('#float-button').on('click', function () {
-        $('#float-menu').toggleClass('active');
-        $('#float-menu').toggleClass('not-active');
-    });
     for (var formation in Formations) {
         var newFormation = $('<div />').addClass('formation');
         var location_1 = $('<div />').attr('id', "formation__location").append($('<h3 />').text("" + Formations["" + formation].local)).append($('<p />').text("" + Formations["" + formation].date));
