@@ -29,9 +29,22 @@ $(document).ready(function () {
         }
     }
     $('#projects-conteiner').css('grid-template-columns', columns);
-    for (var project in Projects) {
+    var i = 1;
+    var _loop_1 = function (project) {
         var newProject = $('<div />').addClass('project').append($('<img />').attr('title', "" + Projects["" + project].name).attr('alt', "" + Projects["" + project].name).attr('src', "" + Projects["" + project].img));
         var details = $('<div />').attr('id', 'project__details').addClass('not-active').append($('<h3 />').text("" + Projects["" + project].name)).append($('<h4 />').text('Descrição:')).append($('<p />').text("" + Projects["" + project].description));
         $('#projects-conteiner').append(newProject.append(details));
+        newProject.on('mouseover', function () {
+            details.removeClass('not-active');
+            details.addClass('active');
+        });
+        newProject.on('mouseleave', function () {
+            details.removeClass('active');
+            details.addClass('not-active');
+        });
+        i++;
+    };
+    for (var project in Projects) {
+        _loop_1(project);
     }
 });

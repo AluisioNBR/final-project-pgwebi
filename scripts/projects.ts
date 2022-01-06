@@ -32,13 +32,26 @@ $(document).ready(function(){
             columns = columns + ' 1fr'
         }
     }
+
     $('#projects-conteiner').css('grid-template-columns', columns)
 
+    let i = 1
     for(let project in Projects){
         let newProject = $('<div />').addClass('project').append($('<img />').attr('title', `${Projects[`${project}`].name}`).attr('alt', `${Projects[`${project}`].name}`).attr('src', `${Projects[`${project}`].img}`))
         
         let details = $('<div />').attr('id', 'project__details').addClass('not-active').append($('<h3 />').text(`${Projects[`${project}`].name}`)).append($('<h4 />').text('Descrição:')).append($('<p />').text(`${Projects[`${project}`].description}`))
 
         $('#projects-conteiner').append(newProject.append(details))
+
+        newProject.on('mouseover', function(){
+            details.removeClass('not-active')
+            details.addClass('active')
+        })
+        newProject.on('mouseleave', function(){
+            details.removeClass('active')
+            details.addClass('not-active')
+        })
+
+        i++
     }
 })
