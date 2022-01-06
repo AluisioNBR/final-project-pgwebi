@@ -1,9 +1,11 @@
 #colors{
     @defaultBlack: #333;
+    @overFormation: #212121;
     @grayBorder: #555;
     @menuButtonHover: #33333388;
     @defaultWhite: #ededed;
     @defaultBlue: #202081;
+    @overBlue: #1b1b6b;
     @defaultOpacity: .8;
 }
 
@@ -23,6 +25,8 @@ body {
     padding: 2rem 0;
 
     background-color: #colors[@defaultBlack];
+
+    overflow-x: hidden;
 }
 
 main {
@@ -45,6 +49,10 @@ h2{
     cursor: default;
 }
 
+h1:hover, h2:hover{
+    opacity: #colors[@defaultOpacity]
+}
+
 hr{
     width: 40%;
 
@@ -57,6 +65,10 @@ hr{
     padding: 2rem;
     border: 2px solid #colors[@grayBorder];
     background-color: #colors[@defaultBlue];
+}
+
+.blue-conteiner-hover(){
+    background-color: #colors[@overBlue];
 }
 
 #presentation{
@@ -102,12 +114,21 @@ hr{
                 border: 2px solid #colors[@defaultWhite];
                 border-radius: 50%;
             }
+
+            img:hover, img:hover ~ figcaption{
+                border-color: #d3a408;
+                color: #d3a408;
+            }
         }
 
         @media(max-width: 720px){
             flex-direction: column-reverse;
         }
     }
+}
+
+#presentation:hover{
+    .blue-conteiner-hover();
 }
 
 #formations{
@@ -130,9 +151,13 @@ hr{
 }
 
 .formation{
+    cursor: default;
+
     display: flex;
     align-items: flex-start;
     justify-content: space-evenly;
+    
+    padding: 1rem;
 
     #formation__description{
         display: flex;
@@ -145,6 +170,10 @@ hr{
             width: 80%;
         }
     }
+}
+
+.formation:hover{
+    background-color: #colors[@overFormation];
 }
 
 #habilities{
@@ -226,6 +255,10 @@ hr{
     }
 }
 
+#contact:hover{
+    .blue-conteiner-hover();
+}
+
 #projects-conteiner{
     .blue-conteiner();
 
@@ -237,6 +270,10 @@ hr{
     @media(max-width: 720px){
         width: 90%;
     }
+}
+
+#projects-conteiner:hover{
+    .blue-conteiner-hover();
 }
 
 .project{
@@ -252,24 +289,31 @@ hr{
     }
 
     #project__details.active{
-        width: 256px;
-        height: 128px;
+        width: 28vw;
+        height: 180px;
         
         display: flex;
         flex-direction: column;
         align-items: center;
         
         position: absolute;
-        bottom: 3rem;
-        left: 40%;
+        bottom: .8rem;
+        left: calc(100vw/2.75);
         z-index: 5;
 
         padding: 1rem;
 
-        background-color: #c5111188;
+        background-color: #colors[@defaultBlack];
+        border: 4px solid #aaa;
 
-        @media(max-width: 720px){
-            left: 35%;
+        overflow: auto;
+
+        h3{
+            font-size: 1rem;
+        }
+
+        p{
+            font-size: .9rem;
         }
     }
 }
