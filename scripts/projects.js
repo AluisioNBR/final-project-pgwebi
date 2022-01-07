@@ -26,14 +26,14 @@ $(document).ready(function () {
             description: 'Primeira avaliação envolvendo nossos conhecimentos sobre HTML e CSS'
         }
     };
-    var cont = 0, columns = '1fr';
+    var cont = 0, rows = '1fr';
     for (var project in Projects) {
         cont++;
         if (cont % 2 != 0 && cont > 1) {
-            columns = columns + ' 1fr';
+            rows = rows + ' 1fr';
         }
     }
-    $('#projects-conteiner').css('grid-template-columns', columns);
+    $('#projects-conteiner').animate({ gridTemplateRows: rows });
     var i = 1;
     var _loop_1 = function (project) {
         var newProject = $('<div />').addClass('project').append($('<img />').attr('title', "" + Projects["" + project].name).attr('alt', "" + Projects["" + project].name).attr('src', "" + Projects["" + project].img));

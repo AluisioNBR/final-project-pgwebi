@@ -31,15 +31,15 @@ $(document).ready(function(){
         }
     }
 
-    let cont = 0, columns = '1fr'
+    let cont = 0, rows = '1fr'
     for(let project in Projects) {
         cont++
         if(cont % 2 != 0 && cont > 1){
-            columns = columns + ' 1fr'
+            rows = rows + ' 1fr'
         }
     }
 
-    $('#projects-conteiner').css('grid-template-columns', columns)
+    $('#projects-conteiner').animate({gridTemplateRows: rows})
 
     let i = 1
     for(let project in Projects){

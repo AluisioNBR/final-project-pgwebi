@@ -263,12 +263,16 @@ hr{
     .blue-conteiner();
 
     display: grid;
+    grid-template-columns: 1fr 1fr;
 
     width: 50%;
-    overflow-x: auto;
+    height: 50vh;
+    overflow: auto;
     
     @media(max-width: 720px){
-        width: 90%;
+        grid-template-columns: 1fr;
+        width: 60%;
+        padding: .5rem;
     }
 }
 
@@ -297,7 +301,7 @@ hr{
         align-items: center;
         
         position: absolute;
-        bottom: .8rem;
+        bottom: 2rem;
         left: calc(100vw/2.75);
         z-index: 5;
 
@@ -309,6 +313,7 @@ hr{
         overflow: auto;
 
         @media(max-width:720px){
+            left: calc(100vw/4);
             width: 50vw;
         }
 
